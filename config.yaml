@@ -1,0 +1,27 @@
+# BRAINCELL Configuration
+project:
+  name: "BRAINCELL Tumor Detection"
+  version: "1.0.0"
+  description: "Deep learning system for brain tumor detection"
+
+model:
+  input_shape: [224, 224, 3]
+  classes: ["No Tumor", "Tumor Detected"]
+  learning_rate: 0.001
+  batch_size: 32
+  epochs: 50
+
+data:
+  train_split: 0.7
+  val_split: 0.15
+  test_split: 0.15
+  augmentation: true
+
+paths:
+  data_dir: "./data"
+  models_dir: "./models"
+  logs_dir: "./logs"
+
+evaluation:
+  metrics: ["accuracy", "precision", "recall", "f1_score", "auc_roc"]
+  threshold: 0.5
